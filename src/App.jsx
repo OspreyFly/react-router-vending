@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import VendingMachine from "./VendingMachine";
 import Cheetos from "./Cheetos";
@@ -9,20 +9,12 @@ import Doritos from "./Doritos";
 function App() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/" exact>
-          <VendingMachine />
-        </Route>
-        <Route path="/Doritos" exact>
-          <Doritos />
-        </Route>
-        <Route path="/Pretzels" exact>
-          <Pretzels />
-        </Route>
-        <Route path="/Cheetos" exact>
-          <Cheetos />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<VendingMachine />} />
+        <Route path="/Doritos" element={<Doritos />} />
+        <Route path="/Cheetos" element={<Cheetos />} />
+        <Route path="/Pretzels" element={<Pretzels />} />
+      </Routes>
     </BrowserRouter>
   );
 }
